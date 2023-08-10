@@ -65,7 +65,7 @@
                                     Header="剩余时间">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding RemainTime}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                        <TextBlock Text="{Binding RemainingTime}" HorizontalAlignment="Center" VerticalAlignment="Center"
                                                    md:TextBlockAssist.AutoToolTip="True"
                                                    FontSize="20"
                                                    TextWrapping="Wrap"
@@ -128,7 +128,7 @@
                                     Header="剩余时间">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding RemainTime}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                        <TextBlock Text="{Binding RemainingTime}" HorizontalAlignment="Center" VerticalAlignment="Center"
                                                    md:TextBlockAssist.AutoToolTip="True"
                                                    FontSize="20"
                                                    TextWrapping="Wrap"

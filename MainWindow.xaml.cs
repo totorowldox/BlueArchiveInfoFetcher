@@ -33,11 +33,9 @@ namespace BlueArchiveInfoFetcher
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Debug.WriteLine("123");
             Image image = sender as Image;
             var window = new PopupImage();
             window.ResetImage(image.Source);
-            window.Activate();
             window.Show();
             window.Topmost = true;
         }

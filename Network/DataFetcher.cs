@@ -42,6 +42,8 @@ namespace BlueArchiveInfoFetcher.Network
                                 temp2.Add(BannerData.ConvertTo(l));
                             }
                         }
+                        BannerViewModel.Instance.GachaBanners.Clear();
+                        BannerViewModel.Instance.ActivityBanners.Clear();
                         BannerViewModel.Instance.GachaBanners.AddRange(temp1.SortBanner());
                         BannerViewModel.Instance.ActivityBanners.AddRange(temp2.SortBanner());
                     }

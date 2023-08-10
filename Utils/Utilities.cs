@@ -18,9 +18,9 @@ namespace BlueArchiveInfoFetcher.Utils
             return dateTimeStart.Add(toNow);
         }
 
-        public static List<BannerData> SortBanner(this List<BannerData> banner)
+        public static List<BannerData> SortBanner(this List<BannerData> banners)
         {
-            return banner.OrderByDescending(x => x.endTime).ThenByDescending(x =>
+            return banners.OrderByDescending(x => x.EndTime).ThenByDescending(x =>
             {
                 switch (x.PubArea)
                 {
