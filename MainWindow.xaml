@@ -1,0 +1,154 @@
+﻿<Window x:Class="BlueArchiveInfoFetcher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlueArchiveInfoFetcher"
+        xmlns:data="clr-namespace:BlueArchiveInfoFetcher.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance data:BannerViewModel}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="Microsoft YaHei"
+        Title="BlueArchive Info Fetcher" Height="600" Width="1000" ResizeMode="NoResize" AutomationProperties.AccessKey="">
+    <Grid Margin="0,0,0,0">
+        <TabControl TabStripPlacement="Left"
+                    VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    Style="{StaticResource MaterialDesignTabControl}"
+                    md:TabAssist.HasUniformTabWidth="True"
+                    Margin="0,0,0,0">
+            <TabItem Header="卡池" Height="300" Width="100">
+                <ListView md:ListViewAssist.HeaderRowBackground="#FFD3D3D3"
+                              md:ListViewAssist.ListViewItemPadding="10"
+                              ItemsSource="{Binding GachaBanners}"
+                              Background="#FFE5E5E5"
+                              VirtualizingPanel.ScrollUnit="Pixel">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="Auto"
+                                    Header="标题">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                   md:TextBlockAssist.AutoToolTip="True"
+                                                   FontSize="20"
+                                                   TextWrapping="Wrap"
+                                                   TextAlignment="Center"
+                                                   Width="200"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="Auto"
+                                    Header="时间">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Duration}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                   md:TextBlockAssist.AutoToolTip="True"
+                                                   FontSize="20"
+                                                   TextWrapping="Wrap"
+                                                   TextAlignment="Center"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="Auto"
+                                    Header="剩余时间">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding RemainTime}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                   md:TextBlockAssist.AutoToolTip="True"
+                                                   FontSize="20"
+                                                   TextWrapping="Wrap"
+                                                   TextAlignment="Center"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="Auto"
+                                    Header="预览">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding Preview}"
+                                                   Height="150" MouseDown="Image_MouseDown"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="活动" Height="300">
+                <ListView md:ListViewAssist.HeaderRowBackground="#FFD3D3D3"
+                              md:ListViewAssist.ListViewItemPadding="10"
+                              ItemsSource="{Binding ActivityBanners}"
+                              Background="#FFE5E5E5"
+                              VirtualizingPanel.ScrollUnit="Pixel">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="Auto"
+                                    Header="标题">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                   md:TextBlockAssist.AutoToolTip="True"
+                                                   FontSize="20"
+                                                   TextWrapping="Wrap"
+                                                   TextAlignment="Center"
+                                                   Width="200"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="Auto"
+                                    Header="时间">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Duration}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                   md:TextBlockAssist.AutoToolTip="True"
+                                                   FontSize="20"
+                                                   TextWrapping="Wrap"
+                                                   TextAlignment="Center"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="Auto"
+                                    Header="剩余时间">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding RemainTime}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                   md:TextBlockAssist.AutoToolTip="True"
+                                                   FontSize="20"
+                                                   TextWrapping="Wrap"
+                                                   TextAlignment="Center"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="Auto"
+                                    Header="预览">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding Preview}"
+                                                   Height="150" MouseDown="Image_MouseDown"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
